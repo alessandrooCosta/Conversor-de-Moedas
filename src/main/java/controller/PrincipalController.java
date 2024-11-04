@@ -29,10 +29,15 @@ public class PrincipalController {
     private Button btnConverter;
 
     @FXML
+    private Button btnLimpar;
+
+    @FXML
     private Label resultado;
 
     @FXML
-    private void initialize() {
+    private void initialize() throws IOException, InterruptedException {
+        btnLimpar.setDisable(true);
+
         cbxMoedaDe.getItems().addAll("USD","AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN",
                 "BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN","BWP","BYN","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC", "CUP", "CVE","CZK",
                 "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB","EUR","FJD","FKP","FOK","GBP","GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ",
@@ -57,16 +62,26 @@ public class PrincipalController {
     @FXML
     private void onBtnConverterClick() throws IOException, InterruptedException {
         double quantidade = Double.parseDouble(txtQuantidade.getText());
+        Moedas moeda = new Moedas(quantidade);
         String moedaDe = cbxMoedaDe.getValue();
         String moedaPara = cbxMoedaPara.getValue();
-        String linkApi = "https://v6.exchangerate-api.com/v6/183f02f3f6692bccf61e29fd/pair/" + moedaDe+ "/" + moedaPara + "/" + quantidade;
+        String linkApi = "https://v6.exchangerate-api.com/v6/183f02f3f6692bccf61e29fd/pair/" + moedaDe+ "/" + moedaPara + "/" + moeda.getQuantidade();
         HttpClient cliente = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(linkApi)).build();
         HttpResponse<String> response = cliente.send(request, HttpResponse.BodyHandlers.ofString());
         String json = response.body();
         Gson gson = new Gson();
         DadosMoeda record = gson.fromJson(json, DadosMoeda.class);
-        Moedas moedas = new Moedas(record);
+        Moedas moedas = new Moedas(quantidade,record);
+        btnLimpar.setDisable(false);
         resultado.setText(moedas.toString());
+    }
+
+    @FXML
+    private void onBtnLimparClick(){
+        cbxMoedaPara.setValue("");
+        cbxMoedaDe.setValue("");
+        txtQuantidade.setText("");
+        resultado.setText("");
     }
 }
