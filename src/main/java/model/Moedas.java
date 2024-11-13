@@ -6,7 +6,7 @@ public class Moedas {
     private String target_code;
     private double conversion_rate;
     private double conversion_result;
-
+    private String time_last_update_utc;
 
     public Moedas(double quantidade){
         this.quantidade = quantidade;
@@ -18,24 +18,20 @@ public class Moedas {
         this.target_code = moedaRecord.target_code();
         this.conversion_rate = Double.valueOf(moedaRecord.conversion_rate());
         this.conversion_result = Double.valueOf(moedaRecord.conversion_result());
+        this.time_last_update_utc = moedaRecord.time_last_update_utc();
     }
 
     public double getQuantidade(){
         return quantidade;
     }
 
-    public void setQuantidade(double quantidade){
-        this.quantidade = quantidade;
+    public String dataUltimaAtualização(){
+        return time_last_update_utc;
     }
-
-    /*
-    public String getBase_code() {
-        return base_code;
-    }
-    */
 
     @Override
     public String toString() {
-        return String.format("%.2f", conversion_result) + " " + target_code + " " + quantidade;
+        return String.format("%.2f", quantidade)+" "+base_code+" = "+String.format("%.2f", conversion_result)+" "+target_code + "\n";
     }
+
 }

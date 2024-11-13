@@ -35,6 +35,9 @@ public class PrincipalController {
     private Label resultado;
 
     @FXML
+    private Label atualizacao;
+
+    @FXML
     private void initialize() throws IOException, InterruptedException {
         btnLimpar.setDisable(true);
 
@@ -75,6 +78,7 @@ public class PrincipalController {
         Moedas moedas = new Moedas(quantidade,record);
         btnLimpar.setDisable(false);
         resultado.setText(moedas.toString());
+        atualizacao.setText(moedas.dataUltimaAtualização());
     }
 
     @FXML
@@ -83,5 +87,6 @@ public class PrincipalController {
         cbxMoedaDe.setValue("");
         txtQuantidade.setText("");
         resultado.setText("");
+        atualizacao.setText("");
     }
 }

@@ -10,51 +10,56 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
     <children>
-        <Label layoutX="168.0" layoutY="139.0" prefHeight="29.0" prefWidth="87.0" text="Quantidade: ">
+        <Label layoutX="167.0" layoutY="110.0" prefHeight="29.0" prefWidth="87.0" text="Quantidade: ">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <TextField fx:id="txtQuantidade" layoutX="276.0" layoutY="139.0" prefHeight="30.0" prefWidth="150.0">
+        <TextField fx:id="txtQuantidade" layoutX="283.0" layoutY="109.0" prefHeight="30.0" prefWidth="150.0">
             <font>
                 <Font size="14.0" />
             </font>
         </TextField>
-        <Label layoutX="170.0" layoutY="190.0" text="De:">
+        <Label layoutX="170.0" layoutY="152.0" text="De:">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label fx:id="resultado" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="344.0" prefHeight="69.0" prefWidth="275.0" textAlignment="CENTER" wrapText="true">
+        <Label fx:id="resultado" alignment="CENTER" contentDisplay="CENTER" layoutX="111.0" layoutY="307.0" prefHeight="48.0" prefWidth="410.0" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="170.0" layoutY="225.0" prefHeight="20.0" prefWidth="40.0" text="Para: ">
+        <Label layoutX="171.0" layoutY="192.0" prefHeight="20.0" prefWidth="40.0" text="Para: ">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button fx:id="btnConverter" layoutX="220.0" layoutY="268.0" mnemonicParsing="false" onAction="#onBtnConverterClick" prefHeight="25.0" prefWidth="160.0" text="Converter" />
-        <ComboBox fx:id="cbxMoedaPara" editable="true" layoutX="276.0" layoutY="222.0" prefWidth="150.0">
+        <Button fx:id="btnConverter" layoutX="220.0" layoutY="232.0" mnemonicParsing="false" onAction="#onBtnConverterClick" prefHeight="25.0" prefWidth="160.0" text="Converter" />
+        <ComboBox fx:id="cbxMoedaPara" editable="true" layoutX="283.0" layoutY="189.0" prefWidth="150.0">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                 </FXCollections>
             </items>
         </ComboBox>
-        <ComboBox fx:id="cbxMoedaDe" editable="true" layoutX="276.0" layoutY="187.0" prefWidth="150.0">
+        <ComboBox fx:id="cbxMoedaDe" editable="true" layoutX="283.0" layoutY="149.0" prefWidth="150.0">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                 </FXCollections>
             </items>
         </ComboBox>
-      <ImageView fitHeight="118.0" fitWidth="150.0" layoutX="426.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="138.0" fitWidth="150.0" layoutX="441.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/img1.png" />
          </image>
       </ImageView>
-        <Button fx:id="btnLimpar" layoutX="220.0" layoutY="303.0" mnemonicParsing="true" onAction="#onBtnLimparClick" prefHeight="25.0" prefWidth="160.0" text="Limpar" />
+        <Button fx:id="btnLimpar" layoutX="220.0" layoutY="271.0" mnemonicParsing="true" onAction="#onBtnLimparClick" prefHeight="25.0" prefWidth="160.0" text="Limpar" />
+      <Label fx:id="atualizacao" layoutX="199.0" layoutY="355.0" prefHeight="29.0" prefWidth="246.0" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
