@@ -1,5 +1,7 @@
 package model;
 
+import dao.DadosMoeda;
+
 public class Moedas {
     private double quantidade;
     private String base_code;

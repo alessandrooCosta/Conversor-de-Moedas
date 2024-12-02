@@ -6,8 +6,10 @@ module com.example.testejavafx {
 
 
     opens view to javafx.fxml;
-    exports view;
     exports controller;
     opens controller to javafx.fxml;
     opens model to com.google.gson;
+    exports dao;
+    opens dao to com.google.gson;
+    exports view;
 }
