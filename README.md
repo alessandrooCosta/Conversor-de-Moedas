@@ -51,7 +51,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="images/conversorMoedas.png"/>
+  <img align="left" height="500" src="images/conversorMoedas.png"/>
 </div>
 
 ###
