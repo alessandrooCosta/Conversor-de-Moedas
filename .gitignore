@@ -1,50 +1,35 @@
+# Ignorar diretório target, exceto em src/main e src/test
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Ignorar arquivos do Maven Wrapper
 .mvn/
+!.mvn/wrapper/maven-wrapper.jar
 mvnw
 mvnw.cmd
 
+# Ignorar arquivos de sistema e compilação
 .DS_Store
 Thumbs.db
-
-target/
 build/
 out/
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 .idea/
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
 *.iml
 *.ipr
+*.iws
 
-### Eclipse ###
-.apt_generated
+# Eclipse
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
-/nbbuild/
 /dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+/nbbuild/
 
-### VS Code ###
+# VS Code
 .vscode/
-
-### Mac OS ###
-.DS_Store
