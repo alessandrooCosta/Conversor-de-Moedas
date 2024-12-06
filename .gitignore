@@ -1,35 +1,28 @@
-# Ignorar diretório target, exceto em src/main e src/test
 target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-# Ignorar arquivos do Maven Wrapper
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar
 mvnw
 mvnw.cmd
 
-# Ignorar arquivos de sistema e compilação
 .DS_Store
 Thumbs.db
 build/
 out/
 
-# IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
 *.iws
 
-# Eclipse
 .classpath
 .project
 .settings/
 
-# NetBeans
 /nbproject/private/
 /dist/
 /nbbuild/
 
-# VS Code
 .vscode/
