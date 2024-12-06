@@ -3,7 +3,19 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+.mvn/
+mvnw
+mvnw.cmd
+
+.DS_Store
+Thumbs.db
+
+target/
+build/
+out/
+
 ### IntelliJ IDEA ###
+.idea/
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
